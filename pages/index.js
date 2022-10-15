@@ -23,14 +23,14 @@ export default function Home() {
       <PageLayout title="Pet's Shop">
         <div className={styles.grid}>
           {!cats && <h2>Cargando...</h2>}
-          {cats && cats.map(cat =>{
-            return <Adopted img={cat.url} race={cat.breeds.map(race => {
-               return race.name
-            })} origin={cat.breeds.map(origin =>{
-              return origin.origin
-            })} link={cat.breeds.map(url => {
-              return url.wikipedia_url
-            })} id={cat.id}></Adopted>
+          {cats && cats.map((cat) =>{
+            return( <Adopted key={''} img={cat.url} race={cat.breeds.map(race => {
+              return race.name
+           })} origin={cat.breeds.map(origin =>{
+             return origin.origin
+           })} link={cat.breeds.map(url => {
+             return url.wikipedia_url
+           })} id={cat.id}></Adopted>) 
           })}
         </div>
       </PageLayout>
